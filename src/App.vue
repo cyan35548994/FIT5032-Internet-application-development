@@ -15,7 +15,7 @@ import JSON from './components/JSON.vue'
   </header>
 
   <main>
-    <JSON />
+    <router-view />
   </main>
 </template>
 

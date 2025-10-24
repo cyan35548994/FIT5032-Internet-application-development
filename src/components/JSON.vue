@@ -95,8 +95,14 @@
         <!-- Activity 13: Toggle the message visibility when the button is clicked. -->
         <!-- TODO: CODE TO TOGGLE MESSAGE VISIBILITY HERE. Hint: Use the v-if directive. -->
         <button @click="showMessage = !showMessage">Toggle Message</button>
-        <p class="message success">✨ You're a Vue superstar! ✨</p>
-        <p>Click the button to see a message.</p>
+        <p v-if="showMessage" class="message success">✨ You're a Vue superstar! ✨</p>
+        <p v-else="message">Click the button to see a message.</p>
+        
+        <h2>v-show</h2>
+        <p>Toggle visibility based on a condition.</p>
+        <button @click="showMessage = !showMessage">Toggle Message again</button>
+        <p v-show="showMessage" class="message success">✨ You're a Vue superstar! ✨</p>
+        <p v-show="!showMessage" class="message">Click the button to see message</p>
       </section>
   
       <section class="lab-section">
@@ -118,8 +124,8 @@
   
   // Activity 2: Get authors born after 1850
   const modernAuthors = computed(() =>
-    authors.filter((author) => author.birthYear > 1850)
-);
+    authors.filter((author) => author.birthYear > 1850));
+
   // Activity 3: Get all famous works
   const allFamousWorks = computed(() =>
   authors.flatMap((author) => author.famousWorks.map((work) => work.title))
