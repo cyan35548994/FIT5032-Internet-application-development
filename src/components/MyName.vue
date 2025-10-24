@@ -13,6 +13,7 @@ defineProps({
     <h3>
       Welcome Sam to this vue page!
     </h3>
+    <h2> this is for the github CICD</h2>
   </div>
 </template>
 
